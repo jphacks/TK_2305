@@ -1,7 +1,7 @@
 import { getPins } from "./firestore.js";
 
 // Initialize the map
-var map = L.map("map").setView([0, 0], 15);
+const map = L.map("map").setView([0, 0], 15);
 
 // Add OpenStreetMap tile layer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -43,6 +43,4 @@ getPins().then((pins) => {
     // Open the popup by default
     marker.openPopup();
   });
-
-
 });

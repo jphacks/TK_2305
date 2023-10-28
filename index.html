@@ -7,12 +7,22 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
-    <link rel="stylesheet" href="styles/leaflet.css"></link>
+    <link rel="stylesheet" href="styles/leaflet.css" />
     <link rel="stylesheet" href="styles/globals.css" type="text/css" />
+    <link rel="stylesheet" href="styles/header.css" type="text/css" />
     <link rel="stylesheet" href="styles/style_map.css" type="text/css" />
   </head>
   <body>
-    <div id="map" style="width: 100%; height: 100vh"></div>
+    <div id="container">
+      <div id="header">
+        <div>All Requests</div>
+        <div id="header-ui">
+          <button id="create-request-button">Create Your Request</button>
+          <div>🐣</div>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/firestore.js"></script>
