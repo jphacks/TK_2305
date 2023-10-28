@@ -7,7 +7,22 @@ import { db } from "./main.js";
 
 export async function getPins() {
   const querySnapshot = await getDocs(collection(db, "pins"));
-  return querySnapshot.docs.map((doc) => doc.data());
+  return querySnapshot.docs.map((doc) => {
+    return {
+      id:doc.id,
+      data:doc.data()
+    }
+  });
+}
+
+export async function getPin(id) {
+    const querySnapshot = await getDocs(collection(db, "pins"));
+    return querySnapshot.docs.map((doc) => {
+        return {
+        id:doc.id,
+        data:doc.data()
+        }
+    });
 }
 
 export async function addPin({
