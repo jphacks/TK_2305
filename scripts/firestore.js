@@ -24,7 +24,7 @@ export async function getPinById(id) {
         id: doc.id,
         data: doc.data(),
       };
-    });
+    })[0];
 }
 
 export async function addPin({
