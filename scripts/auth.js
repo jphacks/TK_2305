@@ -26,9 +26,8 @@ function signInWithGoogle() {
   });
 }
 
-export function getUserName() {
-  const user = auth.currentUser;
-  return user.displayName;
+export function getUser() {
+  return auth.currentUser;
 }
 
 auth.onAuthStateChanged((user) => {
