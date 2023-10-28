@@ -24,7 +24,7 @@ form.addEventListener("submit", async (event) => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const forgottenItem = document.getElementById("forgotten-item").value;
-        const userId = getUser().id;
+        const userId = getUser().uid;
         if (!userId) {
           throw new Error("ユーザー名が取得できませんでした。");
         }
@@ -65,6 +65,8 @@ form.addEventListener("submit", async (event) => {
         });
 
         form.reset();
+
+        alert("ピンを作成しました。");
       },
       (error) => {
         alert("位置情報が取得できませんでした。");
