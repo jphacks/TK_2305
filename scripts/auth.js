@@ -1,10 +1,14 @@
 import { auth } from "./main.js";
-import { signInWithPopup } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
 
 const logInButton = document.getElementById("log-in-button");
+const avatar = document.getElementById("avatar");
 
 function signInWithGoogle() {
-  const googleProvider = new auth.GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
   signInWithPopup(auth, googleProvider).then((result) => {
     const user = result.user;
     console.log(user);
@@ -13,9 +17,13 @@ function signInWithGoogle() {
 
 auth.onAuthStateChanged((user) => {
   if (user) {
-    console.log(user);
+    logInButton.style.display = "none";
+    avatar.style.display = "block";
+
+    avatar.attributes.src.value = user.photoURL;
   } else {
-    console.log("not logged in");
+    avatar.style.display = "none";
+    logInButton.style.display = "block";
   }
 });
 

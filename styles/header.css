@@ -8,3 +8,7 @@
 #header-ui {
   display: flex;
 }
+
+#avatar {
+  display: none;
+}
