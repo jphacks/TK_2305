@@ -31,7 +31,7 @@ getPins().then((pins) => {
         pin.reward
       }円<br>いつまで: ${
         timeDiff
-      }分以内<br><p style="text-align:center;" button id="detail-button">詳細情報</button></p>`,
+      }分以内<br><p style="text-align:center;"><button id="detail-button" class="orange-round-button">詳細情報</button></p>`,
     );
     // detail button not yet.
 
