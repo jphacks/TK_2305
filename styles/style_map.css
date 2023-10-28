@@ -11,7 +11,7 @@
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
-  width: 1px;
+  display: block;
   padding: 10px 90px;        /* Add some padding */
   text-align: center;        /* Center the text */
   font-size: 36px;           /* Set the text size to 36 pixels */
@@ -35,4 +35,9 @@ a:visited {
 
 a:hover {
   color: white;
+}
+
+:has(>.orange-round-button) {
+  width: 100%;
+  /* background-color: aquamarine; */
 }
