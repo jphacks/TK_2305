@@ -17,11 +17,22 @@ getPins().then((pins) => {
 
     const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
 
-    // Create a marker on the map
-    const marker = L.marker([
-      pin.location.latitude,
-      pin.location.longitude,
-    ]).addTo(map);
+      // Create a custom icon for the marker
+    const customIcon = L.icon({
+      iconUrl: 'images/pin.svg', // Replace with the actual path to your image
+      iconSize: [100, 100], // Set the width and height of the icon in pixels
+      iconAnchor: [16, 32], // Adjust the anchor point if needed
+    });
+
+    // Create a marker using the custom icon
+    const marker = L.marker([pin.location.latitude, pin.location.longitude], { icon: customIcon }).addTo(map);
+
+
+    // // Create a marker on the map
+    // const marker = L.marker([
+    //   pin.location.latitude,
+    //   pin.location.longitude,
+    // ]).addTo(map);
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
