@@ -1,0 +1,11 @@
+/* Customize the Leaflet popup */
+.custom-title {
+  font-weight: bold; /* To make the text bold */
+  font-size: 20px; /* To set the font size (adjust as needed) */
+}
+
+/* Custom CSS to change the background color to green */
+.green-popup {
+  background-color: green;
+  color: white; /* You may also want to change the text color for readability */
+}
