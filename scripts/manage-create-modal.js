@@ -1,7 +1,7 @@
-const map = document.querySelector("#map");
-const modal = document.querySelector("#create-modal");
-const openButton = document.querySelector("#create-button");
-const form = document.querySelector("#create-form");
+const map = document.getElementById("map");
+const modal = document.getElementById("create-modal");
+const openButton = document.getElementById("create-button");
+const form = document.getElementById("create-form");
 
 openButton.addEventListener("click", () => {
   map.style.height = "50%";
