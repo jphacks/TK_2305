@@ -21,7 +21,7 @@
 }
 
 .orange-round-button:hover {
-  background-color: #94a21b;
+  background-color: blue;
 }
 
 
@@ -41,5 +41,5 @@ a:visited {
 }
 
 a:hover {
-  color: black;
+  color: white;
 }
