@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/leaflet.css" />
     <link rel="stylesheet" href="styles/globals.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/create-modal.css" type="text/css" />
     <link rel="stylesheet" href="styles/style_map.css" type="text/css" />
   </head>
   <body>
@@ -17,15 +18,46 @@
       <div id="header">
         <div>All Requests</div>
         <div id="header-ui">
-          <button id="create-request-button">Create Your Request</button>
+          <button id="create-button">Create Your Request</button>
           <div>🐣</div>
         </div>
       </div>
       <div id="map"></div>
+      <div id="create-modal">
+        <div>リクエスト</div>
+        <form id="create-form">
+          <div>
+            <label>
+              忘れ物
+              <input type="text" name="item" />
+            </label>
+          </div>
+          <div>
+            <label
+              >お礼
+              <input type="number" name="reward" />
+            </label>
+          </div>
+          <div>
+            <label
+              >いつまで
+              <input type="datetime-local" name="reward" />
+            </label>
+          </div>
+          <div>
+            <label
+              >詳細情報
+              <textarea name="details"></textarea>
+            </label>
+          </div>
+          <button type="submit" id="create-submit-button">完了</button>
+        </form>
+      </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/firestore.js"></script>
     <script type="module" src="scripts/map.js"></script>
+    <script type="module" src="scripts/manage-create-modal.js"></script>
   </body>
 </html>
