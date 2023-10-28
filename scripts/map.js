@@ -41,8 +41,13 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
+<<<<<<< HEAD
       `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><p><a href="/detail?id=${id}" id="detail-button" class="orange-round-button no-underline">詳細情報</a></p>`,
       { minWidth: "500" }
+=======
+      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
+      {minWidth: "500"},
+>>>>>>> 68f09eccfcdd1d182f6fe62c34e12fad1eb7f265
       // {offset: [data.location.latitude, data.location.longitude]}
     );
     // detail button not yet.

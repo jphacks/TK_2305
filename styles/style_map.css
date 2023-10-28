@@ -10,12 +10,13 @@
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
-  padding: 10px 90px; /* Add some padding */
-  text-align: center; /* Center the text */
-  font-size: 36px; /* Set the text size to 36 pixels */
-  border-radius: 50px; /* Add rounded corners */
-  background-color: #ff9900; /* Set the background color to #FF9900 */
-  color: white; /* Set the text color to white (optional) */
+  display: block;
+  padding: 10px 90px;        /* Add some padding */
+  text-align: center;        /* Center the text */
+  font-size: 36px;           /* Set the text size to 36 pixels */
+  border-radius: 50px;       /* Add rounded corners */
+  background-color: #FF9900; /* Set the background color to #FF9900 */
+  color: white;              /* Set the text color to white (optional) */
   /* Add any additional styling you need */
 }
 
@@ -23,6 +24,7 @@
   background-color: blue;
 }
 
+<<<<<<< HEAD
 /* Custom CSS to change the background color to green */
 .green-popup {
   background-color: green;
@@ -30,8 +32,10 @@
 }
 
 .no-underline {
+=======
+a {
+>>>>>>> 68f09eccfcdd1d182f6fe62c34e12fad1eb7f265
   text-decoration: none; /* Remove underline */
-  color: white; /* Inherit color from its parent, typically black */
 }
 
 a:visited {
@@ -41,3 +45,11 @@ a:visited {
 a:hover {
   color: white;
 }
+<<<<<<< HEAD
+=======
+
+:has(>.orange-round-button) {
+  width: 100%;
+  /* background-color: aquamarine; */
+}
+>>>>>>> 68f09eccfcdd1d182f6fe62c34e12fad1eb7f265
