@@ -11,8 +11,12 @@ function signInWithGoogle() {
   const googleProvider = new GoogleAuthProvider();
   signInWithPopup(auth, googleProvider).then((result) => {
     const user = result.user;
-    console.log(user);
   });
+}
+
+export function getUserName() {
+  const user = auth.currentUser;
+  return user.displayName;
 }
 
 auth.onAuthStateChanged((user) => {
