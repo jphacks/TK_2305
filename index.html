@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <title>忘れ物</title>
@@ -9,22 +9,25 @@
     />
     <link rel="stylesheet" href="styles/globals.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/create-modal.css" type="text/css" />
   </head>
   <body>
     <div id="container">
       <div id="header">
         <div>All Requests</div>
         <div id="header-ui">
-          <button id="create-request-button">Create Your Request</button>
+          <button id="create-button">Create Your Request</button>
           <div>🐣</div>
         </div>
-       </div>
+      </div>
       <div id="map"></div>
+      <div id="create-modal"></div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- run with `index.html` only -->
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/firestore.js"></script>
     <script type="module" src="scripts/map.js"></script>
+    <script type="module" src="scripts/manage-create-modal.js"></script>
   </body>
 </html>
