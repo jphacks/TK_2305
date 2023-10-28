@@ -2,6 +2,8 @@ import {
   collection,
   getDocs,
   addDoc,
+  setDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 import { db } from "./main.js";
 
@@ -33,7 +35,7 @@ export async function getPinById(id) {
 
 export async function addPin({
   forgottenItem,
-  userName,
+  userId,
   reward,
   deadline,
   location,
@@ -41,7 +43,7 @@ export async function addPin({
 }) {
   await addDoc(collection(db, "pins"), {
     forgotten_item: forgottenItem,
-    user_name: userName,
+    user_id: userId,
     reward: reward,
     deadline: deadline,
     location: location,
@@ -60,15 +62,14 @@ export async function getUserById(id) {
           data: doc.data(),
         };
       })[0];
-  } catch {
+  } catch (e) {
     return null;
   }
 }
 
 export async function addUser({ userName, photoURL, id }) {
-  await addDoc(collection(db, "users"), {
+  await setDoc(doc(db, "users", id), {
     user_name: userName,
-    photoURL,
-    id,
+    photo_url: photoURL,
   });
 }

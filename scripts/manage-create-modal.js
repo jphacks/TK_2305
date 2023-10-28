@@ -1,5 +1,5 @@
 import { addPin } from "./firestore.js";
-import { getUserName } from "./auth.js";
+import { getUser } from "./auth.js";
 
 const map = document.getElementById("map");
 const modal = document.getElementById("create-modal");
@@ -24,8 +24,8 @@ form.addEventListener("submit", async (event) => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const forgottenItem = document.getElementById("forgotten-item").value;
-        const userName = getUserName();
-        if (!userName) {
+        const userId = getUser().id;
+        if (!userId) {
           throw new Error("ユーザー名が取得できませんでした。");
         }
         const reward = document.getElementById("reward").value;
@@ -50,14 +50,14 @@ form.addEventListener("submit", async (event) => {
           alert("入力されていない項目があります。");
           return;
         }
-        if (!userName) {
-          alert("ユーザー名が取得できませんでした。");
+        if (!userId) {
+          alert("ユーザーが取得できませんでした。");
           return;
         }
 
         await addPin({
           forgottenItem,
-          userName,
+          userId,
           reward,
           deadline,
           location,
