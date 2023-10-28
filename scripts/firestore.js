@@ -9,12 +9,19 @@ import { db } from "./main.js";
 
 export async function getPins() {
   const querySnapshot = await getDocs(collection(db, "pins"));
-  return querySnapshot.docs.map((doc) => {
-    return {
-      id: doc.id,
-      data: doc.data(),
-    };
-  });
+  return querySnapshot.docs
+    .map((doc) => {
+      return {
+        id: doc.id,
+        data: doc.data(),
+      };
+    })
+    .filter((pin) => {
+      const deadline = pin.data.deadline.toDate();
+      const currentTime = new Date();
+      const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
+      return timeDiff > 0;
+    });
 }
 
 export async function getPinById(id) {
