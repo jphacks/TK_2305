@@ -21,7 +21,8 @@ getPins().then((pins) => {
     const customIcon = L.icon({
       iconUrl: "images/pin.svg", // Replace with the actual path to your image
       iconSize: [100, 100], // Set the width and height of the icon in pixels
-      iconAnchor: [16, 32], // Adjust the anchor point if needed
+      iconAnchor: [50, 100], // Adjust the anchor point if needed
+      popupAnchor: [0, -100], // Adjust the popup anchor to position it above the center
     });
 
     // Create a marker using the custom icon
@@ -37,7 +38,9 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${pin.forgotten_item}</div><div class="popup-content">ユーザー名: ${pin.user_name}<br>お礼: ${pin.reward}円<br>いつまで: ${timeDiff}分以内<br><p style="text-align:center;"><button id="detail-button" class="orange-round-button">詳細情報</button></p>`
+      `<div class="custom-title">${pin.forgotten_item}</div><div class="popup-content">ユーザー名: ${pin.user_name}<br>お礼: ${pin.reward}円<br>いつまで: ${timeDiff}分以内<br><p style="text-align:center;"><button id="detail-button" class="orange-round-button">詳細情報</button></p>`,
+      // {maxWidth: "auto"},
+      // {offset: [pin.location.latitude, pin.location.longitude]}
     );
     // detail button not yet.
 

@@ -1,19 +1,19 @@
 /* Customize the Leaflet popup */
 .custom-title {
   font-weight: bold; /* To make the text bold */
-  font-size: 24px; /* To set the font size (adjust as needed) */
+  font-size: 72px; /* To set the font size (adjust as needed) */
 }
 
 .popup-content {
-  font-size: 12px; /* To set the font size (adjust as needed) */
+  font-size: 36px; /* To set the font size (adjust as needed) */
 }
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
-  font-size: 12px; /* Set the text size to 36 pixels */
-  border-radius: 10px; /* Add rounded corners */
-  background-color: #ff9900; /* Set the background color to #FF9900 */
-  color: white; /* Set the text color to white (optional) */
+  font-size: 36px;           /* Set the text size to 36 pixels */
+  border-radius: 10px;       /* Add rounded corners */
+  background-color: #FF9900; /* Set the background color to #FF9900 */
+  color: white;              /* Set the text color to white (optional) */
   /* Add any additional styling you need */
 }
 
