@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <title>忘れ物</title>
@@ -23,7 +23,36 @@
         </div>
       </div>
       <div id="map"></div>
-      <div id="create-modal"></div>
+      <div id="create-modal">
+        <div>リクエスト</div>
+        <form id="create-form">
+          <div>
+            <label>
+              忘れ物
+              <input type="text" name="item" />
+            </label>
+          </div>
+          <div>
+            <label
+              >お礼
+              <input type="number" name="reward" />
+            </label>
+          </div>
+          <div>
+            <label
+              >いつまで
+              <input type="datetime-local" name="reward" />
+            </label>
+          </div>
+          <div>
+            <label
+              >詳細情報
+              <textarea name="details"></textarea>
+            </label>
+          </div>
+          <button type="submit" id="create-submit-button">完了</button>
+        </form>
+      </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script type="module" src="scripts/main.js"></script>

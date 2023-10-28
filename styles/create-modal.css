@@ -1,5 +1,6 @@
 #create-modal {
   display: none;
   height: 50%;
-  background-color: black;
+  background-color: #005613;
+  color: white;
 }

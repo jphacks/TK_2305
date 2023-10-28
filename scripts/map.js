@@ -24,17 +24,17 @@ getPins().then((pins) => {
       `<div class="custom-title">${pin.forgotten_item}</div>ユーザー名: ${
         pin.user_name
       }<br>報酬: ${pin.reward}円<br>必要な時間: ${Math.floor(
-        (endTime.getTime() - startTime.getTime()) / 1000 / 60,
+        (endTime.getTime() - startTime.getTime()) / 1000 / 60
       )}分<br>使い始める時間: ${startTime.getHours()}:${startTime
         .getMinutes()
         .toString()
         .padStart(
           2,
-          "0",
+          "0"
         )}<br>使い終わる予定の時間: ${endTime.getHours()}:${endTime
         .getMinutes()
         .toString()
-        .padStart(2, "0")}`,
+        .padStart(2, "0")}`
     );
 
     // Open the popup by default
