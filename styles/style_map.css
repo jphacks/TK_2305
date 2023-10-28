@@ -11,6 +11,7 @@
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
+  width: 1px;
   padding: 10px 90px;        /* Add some padding */
   text-align: center;        /* Center the text */
   font-size: 36px;           /* Set the text size to 36 pixels */
@@ -31,9 +32,8 @@
   color: white; /* You may also want to change the text color for readability */
 }
 
-.no-underline {
+a {
   text-decoration: none; /* Remove underline */
-  color: white; /* Inherit color from its parent, typically black */
 }
 
 a:visited {
