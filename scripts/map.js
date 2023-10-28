@@ -65,7 +65,7 @@ data.forEach((locationData) => {
 
   // Create a popup for the marker with the desired information
   marker.bindPopup(
-    `<div class="custom-title">${forgottenItems}</div><br>ユーザー名: ${locationData["user_name"]}<br>報酬: ${locationData["rewards"]}<br>必要な時間: ${locationData["required_time"]}<br>使い始める時間: ${locationData["start_time"]}<br>使い終わる予定の時間: ${locationData["end_time"]}`,
+    `<div class="custom-title">${forgottenItems}</div><br>ユーザー名: ${locationData["user_name"]}<br>報酬: ${locationData["rewards"]}<br>必要な時間: ${locationData["required_time"]}<br>使い始める時間: ${locationData["start_time"]}<br>使い終わる予定の時間: ${locationData["end_time"]}<button id="custom-button">Click Me</button>`,
   );
 
   //
