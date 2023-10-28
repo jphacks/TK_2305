@@ -43,7 +43,6 @@ const data = [
 ];
 
 data.forEach((locationData) => {
-  console.log(locationData); // for debug
   const latitude = locationData.pin_location.latitude;
   const longitude = locationData.pin_location.longitude;
   const forgottenItems = locationData.forgotten_items.join(", "); // Join items into a comma-separated string
