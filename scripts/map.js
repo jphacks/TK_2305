@@ -10,8 +10,8 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 getPins().then((pins) => {
   pins.forEach((pin) => {
-    const id = pin.id
-    const data = pin.data
+    const id = pin.id;
+    const data = pin.data;
 
     // const startTime = data.start_time.toDate();
     // const endTime = data.end_time.toDate();
@@ -41,13 +41,19 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><p style="text-align:center;"><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a></p>`,
-      // {maxWidth: "auto"},
+      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
+      { minWidth: "500" }
       // {offset: [data.location.latitude, data.location.longitude]}
     );
     // detail button not yet.
 
     // Open the popup by default
     marker.openPopup();
+
+    // failed
+    // marker.on('popupopen', function () {
+    //   var customPopup = document.querySelector('.custom-popup');
+    //   customPopup.style.width = '500px'; // Set the desired width in pixels
+    // });
   });
 });
