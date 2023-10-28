@@ -29,26 +29,26 @@
         <form id="create-form">
           <div>
             <label>
-              忘れ物
-              <input type="text" name="item" />
+              内容
+              <input type="text" id="forgotten-item" />
             </label>
           </div>
           <div>
             <label
               >お礼
-              <input type="number" name="reward" />
+              <input type="number" id="reward" />
             </label>
           </div>
           <div>
             <label
               >いつまで
-              <input type="datetime-local" name="reward" />
+              <input type="time" id="deadline" />
             </label>
           </div>
           <div>
             <label
               >詳細情報
-              <textarea name="detail"></textarea>
+              <textarea name="detail" id="detail"></textarea>
             </label>
           </div>
           <button type="submit" id="create-submit-button">完了</button>

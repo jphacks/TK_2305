@@ -10,8 +10,8 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 getPins().then((pins) => {
   pins.forEach((pin) => {
-    const id = pin.id
-    const data = pin.data
+    const id = pin.id;
+    const data = pin.data;
 
     // const startTime = data.start_time.toDate();
     // const endTime = data.end_time.toDate();
