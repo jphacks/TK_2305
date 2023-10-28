@@ -10,6 +10,20 @@ export async function getPins() {
   return querySnapshot.docs.map((doc) => doc.data());
 }
 
-export async function addPin() {
+export async function addPin({
+  forgottenItem,
+  userName,
+  reward,
+  deadline,
+  location,
+}) {
   const docRef = await addDoc(collection(db, "pins"));
+  await docRef.set({
+    forgotten_item: forgottenItem,
+    user_name: userName,
+    reward: reward,
+    start_time: new Date(),
+    end_time: deadline,
+    location: location,
+  });
 }

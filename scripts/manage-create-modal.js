@@ -11,5 +11,5 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   map.style.height = "100%";
-    modal.style.display = "none";
+  modal.style.display = "none";
 });
