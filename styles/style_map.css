@@ -1,11 +1,11 @@
 /* Customize the Leaflet popup */
 .custom-title {
   font-weight: bold; /* To make the text bold */
-  font-size: 48px; /* To set the font size (adjust as needed) */
+  font-size: 24px; /* To set the font size (adjust as needed) */
 }
 
 .popup-content {
-  font-size: 36px; /* To set the font size (adjust as needed) */
+  font-size: 12px; /* To set the font size (adjust as needed) */
 }
 
 /* Define a CSS class for a styled button */
