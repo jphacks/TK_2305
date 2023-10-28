@@ -1,11 +1,10 @@
-import { collection, getDocs } from "firebase/firestore";
-import {db} from "./main";
+import {
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+import { db } from "./main.js";
 
-async function getPins() {
+export async function getPins() {
   const querySnapshot = await getDocs(collection(db, "pins"));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-  });
+  return querySnapshot.docs.map((doc) => doc.data());
 }
-
-getPins()
