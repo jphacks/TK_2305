@@ -2,16 +2,23 @@
 <html lang="ja">
   <head>
     <title>忘れ物</title>
-    <link rel="stylesheet" href="styles/globals.css" type="text/css" />
     <meta charset="utf-8" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
+    <link rel="stylesheet" href="styles/globals.css" type="text/css" />
+    <link rel="stylesheet" href="styles/header.css" type="text/css" />
   </head>
   <body>
     <div id="container">
-      <div id="header">All Requests</div>
+      <div id="header">
+        <div>All Requests</div>
+        <div id="header-ui">
+          <button id="create-request-button">Create Your Request</button>
+          <div>🐣</div>
+        </div>
+       </div>
       <div id="map"></div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
