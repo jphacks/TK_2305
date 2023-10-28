@@ -21,9 +21,9 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `忘れ物: ${pin.forgotten_item}<br>ユーザー名: ${
+      `<div class="custom-title">${pin.forgotten_item}</div>ユーザー名: ${
         pin.user_name
-      }<br>必要な時間: ${Math.floor(
+      }<br>報酬: ${pin.reward}円<br>必要な時間: ${Math.floor(
         (endTime.getTime() - startTime.getTime()) / 1000 / 60,
       )}分<br>使い始める時間: ${startTime.getHours()}:${startTime
         .getMinutes()
