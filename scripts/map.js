@@ -23,7 +23,7 @@ getPins().then((pins) => {
     marker.bindPopup(
       `<div class="custom-title">${pin.forgotten_item}</div>ユーザー名: ${
         pin.user_name
-      }<br>報酬: ${
+      }<br>お礼: ${
         pin.reward
       }円<br>必要な時間: ${Math.floor(
         (endTime.getTime() - startTime.getTime()) / 1000 / 60,
@@ -36,7 +36,8 @@ getPins().then((pins) => {
         )}<br>使い終わる予定の時間: ${endTime.getHours()}:${endTime
         .getMinutes()
         .toString()
-        .padStart(2, "0")}`,
+        .padStart(2, "0")
+      }<br><button id="detail-button">Click Me</button>`,
     );
 
     // Open the popup by default
