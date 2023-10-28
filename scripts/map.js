@@ -21,7 +21,7 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${pin.forgotten_item}</div>ユーザー名: ${
+      `<div class="custom-title">${pin.forgotten_item}</div><div class="popup-content">ユーザー名: ${
         pin.user_name
       }<br>お礼: ${
         pin.reward
@@ -39,6 +39,7 @@ getPins().then((pins) => {
         .padStart(2, "0")
       }<br><p style="text-align:center;" button id="detail-button">Click Me</button></p>`,
     );
+    // detail button not yet.
 
     // Open the popup by default
     marker.openPopup();
