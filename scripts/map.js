@@ -10,8 +10,12 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 getPins().then((pins) => {
   pins.forEach((pin) => {
-    const startTime = pin.start_time.toDate();
-    const endTime = pin.end_time.toDate();
+    // const startTime = pin.start_time.toDate();
+    // const endTime = pin.end_time.toDate();
+    const deadline = pin.deadline.toDate();
+    const currentTime = new Date();
+
+    const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
 
     // Create a marker on the map
     const marker = L.marker([
@@ -21,21 +25,15 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${pin.forgotten_item}</div>ユーザー名: ${
+      `<div class="custom-title">${pin.forgotten_item}</div><div class="popup-content">ユーザー名: ${
         pin.user_name
-      }<br>報酬: ${pin.reward}円<br>必要な時間: ${Math.floor(
-        (endTime.getTime() - startTime.getTime()) / 1000 / 60,
-      )}分<br>使い始める時間: ${startTime.getHours()}:${startTime
-        .getMinutes()
-        .toString()
-        .padStart(
-          2,
-          "0",
-        )}<br>使い終わる予定の時間: ${endTime.getHours()}:${endTime
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}`,
+      }<br>お礼: ${
+        pin.reward
+      }円<br>いつまで: ${
+        timeDiff
+      }分以内<br><p style="text-align:center;"><button id="detail-button" class="orange-round-button">詳細情報</button></p>`,
     );
+    // detail button not yet.
 
     // Open the popup by default
     marker.openPopup();
