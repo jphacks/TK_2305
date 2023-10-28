@@ -29,6 +29,7 @@ form.addEventListener("submit", async (event) => {
           throw new Error("ユーザー名が取得できませんでした。");
         }
         const reward = document.getElementById("reward").value;
+        const detail = document.getElementById("detail").value;
 
         const today = new Date();
         const deadlineTime = document.getElementById("deadline").value;
@@ -45,6 +46,14 @@ form.addEventListener("submit", async (event) => {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         };
+        if (!forgottenItem || !reward || !deadline) {
+          alert("入力されていない項目があります。");
+          return;
+        }
+        if (!userName) {
+          alert("ユーザー名が取得できませんでした。");
+          return;
+        }
 
         await addPin({
           forgottenItem,
@@ -52,6 +61,7 @@ form.addEventListener("submit", async (event) => {
           reward,
           deadline,
           location,
+          detail,
         });
 
         form.reset();

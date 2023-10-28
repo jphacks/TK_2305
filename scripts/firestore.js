@@ -33,6 +33,7 @@ export async function addPin({
   reward,
   deadline,
   location,
+  detail,
 }) {
   await addDoc(collection(db, "pins"), {
     forgotten_item: forgottenItem,
@@ -40,5 +41,6 @@ export async function addPin({
     reward: reward,
     deadline: deadline,
     location: location,
+    detail: detail,
   });
 }
