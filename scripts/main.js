@@ -44,7 +44,7 @@ const data =
 ];
 
 data.forEach(locationData => {
-    // console.log(locationData); // for debug
+    console.log(locationData); // for debug
     const latitude = locationData.pin_location.latitude;
     const longitude = locationData.pin_location.longitude;
     const forgottenItems = locationData.forgotten_items.join(', '); // Join items into a comma-separated string
@@ -53,7 +53,7 @@ data.forEach(locationData => {
     const marker = L.marker([latitude, longitude]).addTo(map);
     
     // Create a popup for the marker with the desired information
-    marker.bindPopup(`忘れ物: ${forgottenItems}<br>ユーザー名/氏名: ${locationData["ユーザー名/氏名"]}<br>必要な時間: ${locationData["必要な時間"]}<br>使い始める時間: ${locationData["使い始める時間"]}<br>使い終わる予定の時間: ${locationData["使い終わる予定の時間"]}`);
+    marker.bindPopup(`忘れ物: ${forgottenItems}<br>ユーザー名: ${locationData["user_name"]}<br>必要な時間: ${locationData["required_time"]}<br>使い始める時間: ${locationData["start_time"]}<br>使い終わる予定の時間: ${locationData["end_time"]}`);
     
     // Open the popup by default
     marker.openPopup();
