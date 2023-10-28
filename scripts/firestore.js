@@ -9,19 +9,21 @@ export async function getPins() {
   const querySnapshot = await getDocs(collection(db, "pins"));
   return querySnapshot.docs.map((doc) => {
     return {
-      id:doc.id,
-      data:doc.data()
-    }
+      id: doc.id,
+      data: doc.data(),
+    };
   });
 }
 
-export async function getPin(id) {
-    const querySnapshot = await getDocs(collection(db, "pins"));
-    return querySnapshot.docs.map((doc) => {
-        return {
-        id:doc.id,
-        data:doc.data()
-        }
+export async function getPinById(id) {
+  const querySnapshot = await getDocs(collection(db, "pins"));
+  return querySnapshot.docs
+    .filter((doc) => doc.id === id)
+    .map((doc) => {
+      return {
+        id: doc.id,
+        data: doc.data(),
+      };
     });
 }
 
@@ -32,13 +34,11 @@ export async function addPin({
   deadline,
   location,
 }) {
-  const docRef = await addDoc(collection(db, "pins"));
-  await docRef.set({
+  await addDoc(collection(db, "pins"), {
     forgotten_item: forgottenItem,
     user_name: userName,
     reward: reward,
-    start_time: new Date(),
-    end_time: deadline,
+    deadline: deadline,
     location: location,
   });
 }
