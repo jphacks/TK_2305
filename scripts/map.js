@@ -45,5 +45,12 @@ getPins().then((pins) => {
 
     // Open the popup by default
     marker.openPopup();
+    
+    // failed
+    // marker.on('popupopen', function () {
+    //   var customPopup = document.querySelector('.custom-popup');
+    //   customPopup.style.width = '500px'; // Set the desired width in pixels
+    // });
+  
   });
 });
