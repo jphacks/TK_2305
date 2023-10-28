@@ -10,9 +10,12 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 getPins().then((pins) => {
   pins.forEach((pin) => {
-    // const startTime = pin.start_time.toDate();
-    // const endTime = pin.end_time.toDate();
-    const deadline = pin.deadline.toDate();
+    const id = pin.id
+    const data = pin.data
+
+    // const startTime = data.start_time.toDate();
+    // const endTime = data.end_time.toDate();
+    const deadline = data.deadline.toDate();
     const currentTime = new Date();
 
     const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
@@ -26,21 +29,21 @@ getPins().then((pins) => {
     });
 
     // Create a marker using the custom icon
-    const marker = L.marker([pin.location.latitude, pin.location.longitude], {
+    const marker = L.marker([data.location.latitude, data.location.longitude], {
       icon: customIcon,
     }).addTo(map);
 
     // // Create a marker on the map
     // const marker = L.marker([
-    //   pin.location.latitude,
-    //   pin.location.longitude,
+    //   data.location.latitude,
+    //   data.location.longitude,
     // ]).addTo(map);
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${pin.forgotten_item}</div><div class="popup-content">ユーザー名: ${pin.user_name}<br>お礼: ${pin.reward}円<br>いつまで: ${timeDiff}分以内<br><p style="text-align:center;"><button id="detail-button" class="orange-round-button">詳細情報</button></p>`,
+      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><p style="text-align:center;"><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a></p>`,
       // {maxWidth: "auto"},
-      // {offset: [pin.location.latitude, pin.location.longitude]}
+      // {offset: [data.location.latitude, data.location.longitude]}
     );
     // detail button not yet.
 
