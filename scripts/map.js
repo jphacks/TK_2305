@@ -37,7 +37,7 @@ getPins().then((pins) => {
         .getMinutes()
         .toString()
         .padStart(2, "0")
-      }<br><button id="detail-button">Click Me</button>`,
+      }<br><p style="text-align:center;" button id="detail-button">Click Me</button></p>`,
     );
 
     // Open the popup by default
