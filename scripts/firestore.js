@@ -17,14 +17,18 @@ export async function getPins() {
 
 export async function getPinById(id) {
   const querySnapshot = await getDocs(collection(db, "pins"));
-  return querySnapshot.docs
-    .filter((doc) => doc.id === id)
-    .map((doc) => {
-      return {
-        id: doc.id,
-        data: doc.data(),
-      };
-    });
+  try {
+    return querySnapshot.docs
+      .filter((doc) => doc.id === id)
+      .map((doc) => {
+        return {
+          id: doc.id,
+          data: doc.data(),
+        };
+      })[0];
+  } catch {
+    return null;
+  }
 }
 
 export async function addPin({
@@ -42,5 +46,29 @@ export async function addPin({
     deadline: deadline,
     location: location,
     detail: detail,
+  });
+}
+
+export async function getUserById(id) {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  try {
+    return querySnapshot.docs
+      .filter((doc) => doc.id === id)
+      .map((doc) => {
+        return {
+          id: doc.id,
+          data: doc.data(),
+        };
+      })[0];
+  } catch {
+    return null;
+  }
+}
+
+export async function addUser({ userName, photoURL, id }) {
+  await addDoc(collection(db, "users"), {
+    user_name: userName,
+    photoURL,
+    id,
   });
 }
