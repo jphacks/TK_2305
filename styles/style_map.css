@@ -2,6 +2,7 @@
 .custom-title {
   font-weight: bold; /* To make the text bold */
   font-size: 72px; /* To set the font size (adjust as needed) */
+  color:white;
 }
 
 .popup-content {
@@ -10,18 +11,19 @@
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
-  display: block;
-  padding: 10px 90px; /* Add some padding */
-  text-align: center; /* Center the text */
-  font-size: 36px; /* Set the text size to 36 pixels */
-  border-radius: 50px; /* Add rounded corners */
-  background-color: #ff9900; /* Set the background color to #FF9900 */
-  color: white; /* Set the text color to white (optional) */
+  font-size: 36px;           /* Set the text size to 36 pixels */
+  border-radius: 15px;       /* Add rounded corners */
+  background-color: #FF9900; /* Set the background color to #FF9900 */
+  color: white;              /* Set the text color to white (optional) */
   /* Add any additional styling you need */
 }
 
 .orange-round-button:hover {
   background-color: blue;
+}
+
+.green-popup{
+  background-color: #005613;
 }
 
 a {
