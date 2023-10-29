@@ -1,6 +1,6 @@
 #create-modal {
   display: none;
-  height: 50%;
+  height: calc(50vh - 34px);
   background-color: #005613;
   color: white;
 }

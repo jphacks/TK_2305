@@ -7,7 +7,7 @@ const openButton = document.getElementById("create-button");
 const form = document.getElementById("create-form");
 
 openButton.addEventListener("click", () => {
-  map.style.height = "50%";
+  map.style.height = "calc(50% - 34px)";
   modal.style.display = "block";
   document.getElementById("forgotten-item").focus();
 
@@ -39,7 +39,7 @@ form.addEventListener("submit", async (event) => {
           today.getDate(),
           deadlineTime.split(":")[0],
           deadlineTime.split(":")[1],
-          0
+          0,
         );
 
         const location = {
@@ -70,12 +70,12 @@ form.addEventListener("submit", async (event) => {
       },
       (error) => {
         alert("位置情報が取得できませんでした。");
-      }
+      },
     );
   } else {
     alert("この端末では位置情報が取得できません。");
   }
 
-  map.style.height = "100%";
+  map.style.height = "calc(100vh - 68px)";
   modal.style.display = "none";
 });
