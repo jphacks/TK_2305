@@ -81,7 +81,7 @@ export async function increaseReward({ id, reward }) {
   await setDoc(
     pinRef,
     {
-      reward: reward + 1,
+      reward: Number(reward) + 1,
     },
     { merge: true },
   );
