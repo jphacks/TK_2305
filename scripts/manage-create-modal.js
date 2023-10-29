@@ -39,7 +39,7 @@ form.addEventListener("submit", async (event) => {
           today.getDate(),
           deadlineTime.split(":")[0],
           deadlineTime.split(":")[1],
-          0
+          0,
         );
 
         const location = {
@@ -70,7 +70,7 @@ form.addEventListener("submit", async (event) => {
       },
       (error) => {
         alert("位置情報が取得できませんでした。");
-      }
+      },
     );
   } else {
     alert("この端末では位置情報が取得できません。");
