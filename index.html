@@ -15,43 +15,44 @@
   </head>
   <body>
     <div id="container">
-      <div id="header">
-        <div>All Requests</div>
+      <div id="header" class="green-popup">
+        <div class="custom-title">リクエスト一覧</div>
         <div id="header-ui">
-          <button id="create-button">Create Your Request</button>
-          <button id="log-in-button">Login</button>
+          <button id="create-button" class="orange-round-button">リクエストを作成</button>
+          <button id="log-in-button" class="orange-round-button">ログイン</button>
           <img id="avatar" src="" alt="avatar" />
         </div>
       </div>
       <div id="map"></div>
       <div id="create-modal">
-        <div>リクエスト</div>
-        <form id="create-form">
+        <div class="custom-title">リクエスト</div>
+        <form id="create-form" class="popup-content">
           <div>
             <label>
               忘れ物
-              <input type="text" name="item" />
+              <input type="text" name="item" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >お礼
-              <input type="number" name="reward" />
+              <input type="number" name="reward" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >いつまで
-              <input type="datetime-local" name="reward" />
+              <input type="datetime-local" name="reward" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >詳細情報
-              <textarea name="detail"></textarea>
+              <br>
+              <textarea name="detail" class="input-round-button"></textarea>
             </label>
           </div>
-          <button type="submit" id="create-submit-button">完了</button>
+          <button type="submit" id="create-submit-button" class="br-orange-round-button" >完了</button>
         </form>
       </div>
     </div>
