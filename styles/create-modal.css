@@ -1,7 +1,7 @@
 #create-modal {
   display: none;
   height: calc(50vh - 34px);
-  background-color: #005613;
+  background-color: black;
   color: white;
 }
 /* Define a CSS class for a standard input button */

@@ -4,7 +4,7 @@ body {
 
 /* ヘッダーのスタイリング */
 #header {
-  background-color: #005613; /* 緑色の背景 */
+  background-color: black; /* 緑色の背景 */
   color: white; /* 白色の文字 */
   padding: 1em;
   display: flex;
