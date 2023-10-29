@@ -17,5 +17,6 @@ getPinById(id).then((pin) => {
     document.getElementById("user-name").innerText = user.data.user_name;
     document.getElementById("reward").innerText = data.reward;
     document.getElementById("deadline").innerText = timeDiff + "分以内";
+    document.getElementById("photo").attributes.src.value = data.detail;
   });
 });
