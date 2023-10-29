@@ -31,7 +31,7 @@
             <label class="create-contents">
               内容
             </label>
-            <input type="text" id="forgotten-item" class="input-round-button"/>
+            <input type="text" name="item" class="input-round-button"/>
           </div>
           <div>
             <label class="create-contents"
@@ -43,14 +43,16 @@
             <label class="create-contents"
               >いつまで
             </label>
-            <input type="time" id="deadline" class="input-round-button"/>
+            <input type="datetime-local" name="reward" class="input-round-button"/>
           </div>
           <div>
             <div>
             <label class="create-contents"
               >詳細情報
             </label>
-              <textarea name="detail" id="detail" class="input-round-button"></textarea>
+            <br>
+            <textarea name="detail" class="input-round-button"></textarea>
+  
           </div>
           </div>
           <button type="submit" id="create-submit-button" class="br-orange-round-button" >完了</button>
