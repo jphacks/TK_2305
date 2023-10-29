@@ -1,3 +1,6 @@
+import { addPin } from "./firestore.js";
+import { getUser } from "./auth.js";
+
 const map = document.getElementById("map");
 const modal = document.getElementById("create-modal");
 const openButton = document.getElementById("create-button");
@@ -6,9 +9,72 @@ const form = document.getElementById("create-form");
 openButton.addEventListener("click", () => {
   map.style.height = "50%";
   modal.style.display = "block";
+  document.getElementById("forgotten-item").focus();
+
+  const now = new Date();
+  now.setHours(now.getHours() + 1);
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  document.getElementById("deadline").value = hours + ":" + minutes;
 });
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const forgottenItem = document.getElementById("forgotten-item").value;
+        const userId = getUser().uid;
+        if (!userId) {
+          throw new Error("ユーザー名が取得できませんでした。");
+        }
+        const reward = document.getElementById("reward").value;
+        const detail = document.getElementById("detail").value;
+
+        const today = new Date();
+        const deadlineTime = document.getElementById("deadline").value;
+        const deadline = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          today.getDate(),
+          deadlineTime.split(":")[0],
+          deadlineTime.split(":")[1],
+          0
+        );
+
+        const location = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+        if (!forgottenItem || !reward || !deadline) {
+          alert("入力されていない項目があります。");
+          return;
+        }
+        if (!userId) {
+          alert("ユーザーが取得できませんでした。");
+          return;
+        }
+
+        await addPin({
+          forgottenItem,
+          userId,
+          reward,
+          deadline,
+          location,
+          detail,
+        });
+
+        form.reset();
+
+        alert("ピンを作成しました。");
+      },
+      (error) => {
+        alert("位置情報が取得できませんでした。");
+      }
+    );
+  } else {
+    alert("この端末では位置情報が取得できません。");
+  }
 
   map.style.height = "100%";
   modal.style.display = "none";

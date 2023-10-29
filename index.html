@@ -29,27 +29,27 @@
         <form id="create-form" class="popup-content">
           <div>
             <label>
-              忘れ物
-              <input type="text" name="item" class="input-round-button"/>
+              内容
+              <input type="text" id="forgotten-item" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >お礼
-              <input type="number" name="reward" class="input-round-button"/>
+              <input type="number" id="reward" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >いつまで
-              <input type="datetime-local" name="reward" class="input-round-button"/>
+              <input type="time" id="deadline" class="input-round-button"/>
             </label>
           </div>
           <div>
             <label
               >詳細情報
               <br>
-              <textarea name="detail" class="input-round-button"></textarea>
+              <textarea name="detail" id="detail" class="input-round-button"></textarea>
             </label>
           </div>
           <button type="submit" id="create-submit-button" class="br-orange-round-button" >完了</button>

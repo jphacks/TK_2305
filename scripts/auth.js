@@ -2,7 +2,9 @@ import { auth } from "./main.js";
 import {
   GoogleAuthProvider,
   signInWithPopup,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import { addUser, getUserById } from "./firestore.js";
 
 const logInButton = document.getElementById("log-in-button");
 const avatar = document.getElementById("avatar");
@@ -10,9 +12,22 @@ const avatar = document.getElementById("avatar");
 function signInWithGoogle() {
   const googleProvider = new GoogleAuthProvider();
   signInWithPopup(auth, googleProvider).then((result) => {
-    const user = result.user;
-    console.log(user);
+    const authUser = result.user;
+    getUserById(authUser.uid).then((user) => {
+      if (user) {
+        return;
+      }
+      addUser({
+        userName: authUser.displayName,
+        photoURL: authUser.photoURL,
+        id: authUser.uid,
+      }).then(() => {});
+    });
   });
+}
+
+export function getUser() {
+  return auth.currentUser;
 }
 
 auth.onAuthStateChanged((user) => {
@@ -28,3 +43,7 @@ auth.onAuthStateChanged((user) => {
 });
 
 logInButton.addEventListener("click", signInWithGoogle);
+
+avatar.addEventListener("click", () => {
+  signOut(auth);
+});

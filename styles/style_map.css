@@ -29,18 +29,36 @@
 }
 /* Define a CSS class for a styled right bottom button */
 .br-orange-round-button {
-  font-size: 36px;           /* Set the text size to 36 pixels */
-  border-radius: 10px;       /* Add rounded corners */
-  background-color: #FF9900; /* Set the background color to #FF9900 */
-  color: white;              /* Set the text color to white (optional) */
+  display: block;
+  padding: 10px 90px; /* Add some padding */
+  text-align: center; /* Center the text */
+  font-size: 36px; /* Set the text size to 36 pixels */
+  border-radius: 50px; /* Add rounded corners */
+  background-color: #ff9900; /* Set the background color to #FF9900 */
+  color: white; /* Set the text color to white (optional) */
   position:absolute;
   right: 0;
   bottom: 0;
   /* Add any additional styling you need */
 }
 
-/* Custom CSS to change the background color to green */
-.green-popup {
-  background-color: green;
-  color: white; /* You may also want to change the text color for readability */
+.orange-round-button:hover {
+  background-color: blue;
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+:has(> .orange-round-button) {
+  width: 100%;
+  /* background-color: aquamarine; */
 }
