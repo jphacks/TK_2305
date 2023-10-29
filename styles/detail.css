@@ -1,4 +1,6 @@
-/* 既存のスタイルは省略 */
+body {
+  margin: 0;
+}
 
 /* ヘッダーのスタイリング */
 #header {
@@ -30,9 +32,9 @@
 }
 
 /* ユーザー名、お礼、締切、詳細のスタイリング */
-#user-name,
-#reward,
-#deadline {
+div:has(> #user-name),
+div:has(> #reward),
+div:has(> #deadline) {
   margin-left: 1em; /* この値はお好みで調整してください */
   font-size: 3em; /* 文字を大きく表示 */
 }
@@ -46,7 +48,6 @@
 /* 遷移ボタンのスタイリング */
 #transition-button {
   display: inline-block;
-  padding: 0.5em 1em;
   background-color: #ff9900;
   border: none;
   border-radius: 200px;

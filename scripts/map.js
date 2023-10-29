@@ -20,7 +20,7 @@ getPins().then((pins) => {
     const deadline = data.deadline.toDate();
     const currentTime = new Date();
 
-    const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
+    const timeDiff = Math.floor((currentTime - deadline) / (1000 * 60));
 
     // Create a custom icon for the marker
     const customIcon = L.icon({
@@ -43,7 +43,7 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${user.data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
+      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${user.data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分前<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
       { minWidth: "500" },
       // {offset: [data.location.latitude, data.location.longitude]}
     );

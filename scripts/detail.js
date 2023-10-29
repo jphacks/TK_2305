@@ -9,10 +9,14 @@ getPinById(id).then((pin) => {
   getUserById(pin.data.user_id).then((user) => {
     const data = pin.data;
     const deadline = data.deadline.toDate();
+    const currentTime = new Date();
+
+    const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
 
     document.getElementById("forgotten-item").innerText = data.forgotten_item;
     document.getElementById("user-name").innerText = user.data.user_name;
     document.getElementById("reward").innerText = data.reward;
-    document.getElementById("deadline").innerText = deadline;
+    document.getElementById("deadline").innerText = timeDiff + "分以内";
+    document.getElementById("photo").attributes.src.value = data.detail;
   });
 });
