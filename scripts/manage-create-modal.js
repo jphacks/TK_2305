@@ -1,7 +1,11 @@
 import { addPin } from "./firestore.js";
 import { getUser } from "./auth.js";
-import {storage} from "./main.js";
-import {getDownloadURL, ref, uploadBytes} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js";
+import { storage } from "./main.js";
+import {
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js";
 
 const map = document.getElementById("map");
 const modal = document.getElementById("create-modal");
@@ -36,9 +40,9 @@ form.addEventListener("submit", async (event) => {
           alert("写真が選択されていません。");
           return;
         }
-        const storageRef = ref(storage,"/images/"+photo.name);
-       await uploadBytes(storageRef, photo)
-          const detail = await getDownloadURL(storageRef);
+        const storageRef = ref(storage, "/images/" + photo.name);
+        await uploadBytes(storageRef, photo);
+        const detail = await getDownloadURL(storageRef);
 
         const today = new Date();
         const deadlineTime = document.getElementById("deadline").value;
