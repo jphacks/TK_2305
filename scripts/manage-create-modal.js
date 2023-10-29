@@ -15,7 +15,6 @@ const form = document.getElementById("create-form");
 openButton.addEventListener("click", () => {
   map.style.height = "calc(50% - 34px)";
   modal.style.display = "block";
-  document.getElementById("forgotten-item").focus();
 });
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
