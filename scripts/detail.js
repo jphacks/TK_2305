@@ -18,5 +18,11 @@ getPinById(id).then((pin) => {
     document.getElementById("reward").innerText = data.reward;
     document.getElementById("deadline").innerText = timeDiff + "分以内";
     document.getElementById("photo").attributes.src.value = data.detail;
+    
+    // var photo = document.getElementById("photo");
+    // photo.style.width = "auto";
+    // photo.style.height = "auto";
+    document.getElementById("photo").style.width = "100%";
+    document.getElementById("photo").style.height = "auto";
   });
 });

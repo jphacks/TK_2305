@@ -14,3 +14,9 @@
   display: none;
   cursor: pointer;
 }
+
+#photo-container {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
