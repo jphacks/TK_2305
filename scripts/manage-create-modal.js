@@ -44,16 +44,7 @@ form.addEventListener("submit", async (event) => {
         await uploadBytes(storageRef, photo);
         const detail = await getDownloadURL(storageRef);
 
-        const today = new Date();
-        const deadlineTime = document.getElementById("deadline").value;
-        const deadline = new Date(
-          today.getFullYear(),
-          today.getMonth(),
-          today.getDate(),
-          deadlineTime.split(":")[0],
-          deadlineTime.split(":")[1],
-          0,
-        );
+        const deadline = new Date();
 
         const location = {
           latitude: position.coords.latitude,

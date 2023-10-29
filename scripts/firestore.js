@@ -15,14 +15,7 @@ export async function getPins() {
         id: doc.id,
         data: doc.data(),
       };
-    })
-    .filter((pin) => {
-      const deadline = pin.data.deadline.toDate();
-      const currentTime = new Date();
-      const timeDiff = Math.floor((deadline - currentTime) / (1000 * 60));
-      return timeDiff > 0;
-    });
-}
+    })}
 
 export async function getPinById(id) {
   const querySnapshot = await getDocs(collection(db, "pins"));
