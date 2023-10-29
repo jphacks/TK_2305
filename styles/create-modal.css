@@ -7,11 +7,10 @@
 /* Define a CSS class for a standard input button */
 .input-round-button {
   font-size: 36px;           /* Set the text size to 36 pixels */
-  border-radius: 10px;       /* Add rounded corners */
+  border-radius: 36px;       /* Add rounded corners */
   background-color: #FFFFFF; /* Set the background color to #FF9900 */
   color: black;              /* Set the text color to white (optional) */
-  padding: 5px 10px;
-  left:350px;
+  padding: 0 40px
   /* Add any additional styling you need */
 }
 /* Define a CSS class for a styled right bottom button */
@@ -37,5 +36,11 @@
 .create-contents{
   font-size: 64px;
   font-weight: normal;
-  padding: 30px 30px 30px 50px;
+  padding: 0px 10px;
+}
+
+div:has(> label) {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 80px 20px 40px
 }
