@@ -1,5 +1,5 @@
 import { addPin } from "./firestore.js";
-import { getUserName } from "./auth.js";
+import { getUser } from "./auth.js";
 
 const map = document.getElementById("map");
 const modal = document.getElementById("create-modal");
@@ -7,7 +7,7 @@ const openButton = document.getElementById("create-button");
 const form = document.getElementById("create-form");
 
 openButton.addEventListener("click", () => {
-  map.style.height = "50%";
+  map.style.height = "calc(50% - 34px)";
   modal.style.display = "block";
   document.getElementById("forgotten-item").focus();
 
@@ -24,8 +24,8 @@ form.addEventListener("submit", async (event) => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const forgottenItem = document.getElementById("forgotten-item").value;
-        const userName = getUserName();
-        if (!userName) {
+        const userId = getUser().uid;
+        if (!userId) {
           throw new Error("ユーザー名が取得できませんでした。");
         }
         const reward = document.getElementById("reward").value;
@@ -50,14 +50,14 @@ form.addEventListener("submit", async (event) => {
           alert("入力されていない項目があります。");
           return;
         }
-        if (!userName) {
-          alert("ユーザー名が取得できませんでした。");
+        if (!userId) {
+          alert("ユーザーが取得できませんでした。");
           return;
         }
 
         await addPin({
           forgottenItem,
-          userName,
+          userId,
           reward,
           deadline,
           location,
@@ -65,6 +65,8 @@ form.addEventListener("submit", async (event) => {
         });
 
         form.reset();
+
+        alert("ピンを作成しました。");
       },
       (error) => {
         alert("位置情報が取得できませんでした。");
@@ -74,6 +76,6 @@ form.addEventListener("submit", async (event) => {
     alert("この端末では位置情報が取得できません。");
   }
 
-  map.style.height = "100%";
+  map.style.height = "calc(100vh - 68px)";
   modal.style.display = "none";
 });

@@ -1,5 +1,6 @@
 #header {
   width: 100vw;
+  height: 68px;
   display: flex;
   justify-content: space-between;
   justify-items: center;
@@ -11,4 +12,5 @@
 
 #avatar {
   display: none;
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { getPins } from "./firestore.js";
+import { getPins, getUserById } from "./firestore.js";
 
 // Initialize the map
 const map = L.map("map").setView([0, 0], 15);
@@ -9,9 +9,11 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 getPins().then((pins) => {
-  pins.forEach((pin) => {
+  pins.forEach(async (pin) => {
     const id = pin.id;
     const data = pin.data;
+
+    const user = await getUserById(data.user_id);
 
     // const startTime = data.start_time.toDate();
     // const endTime = data.end_time.toDate();
@@ -41,7 +43,7 @@ getPins().then((pins) => {
 
     // Create a popup for the marker with the desired information
     marker.bindPopup(
-      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
+      `<div class="custom-title">${data.forgotten_item}</div><div class="popup-content">ユーザー名: ${user.data.user_name}<br>お礼: ${data.reward}円<br>いつまで: ${timeDiff}分以内<br><a href="/detail?id=${id}" id="detail-button" class="orange-round-button">詳細情報</a>`,
       { minWidth: "500" }
       // {offset: [data.location.latitude, data.location.longitude]}
     );
