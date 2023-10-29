@@ -25,32 +25,32 @@
       </div>
       <div id="map"></div>
       <div id="create-modal">
-        <div class="custom-title">リクエスト</div>
+        <div class="create-title">リクエスト</div>
         <form id="create-form" class="popup-content">
           <div>
-            <label>
+            <label class="create-contents">
               内容
-              <input type="text" id="forgotten-item" class="input-round-button"/>
             </label>
+            <input type="text" id="forgotten-item" class="input-round-button"/>
           </div>
           <div>
-            <label
+            <label class="create-contents"
               >お礼
-              <input type="number" id="reward" class="input-round-button"/>
             </label>
+            <input type="number" id="reward" class="input-round-button"/>
           </div>
           <div>
-            <label
+            <label class="create-contents"
               >いつまで
               <input type="time" id="deadline" class="input-round-button"/>
             </label>
           </div>
           <div>
-            <label
+            <div>
+            <label class="create-contents"
               >詳細情報
-              <br>
-              <textarea name="detail" id="detail" class="input-round-button"></textarea>
             </label>
+          </div>            <textarea name="detail" id="detail" class="input-round-button"></textarea>
           </div>
           <button type="submit" id="create-submit-button" class="br-orange-round-button" >完了</button>
         </form>
