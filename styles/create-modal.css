@@ -4,3 +4,43 @@
   background-color: #005613;
   color: white;
 }
+/* Define a CSS class for a standard input button */
+.input-round-button {
+  font-size: 36px;           /* Set the text size to 36 pixels */
+  border-radius: 36px;       /* Add rounded corners */
+  background-color: #FFFFFF; /* Set the background color to #FF9900 */
+  color: black;              /* Set the text color to white (optional) */
+  padding: 0 40px
+  /* Add any additional styling you need */
+}
+/* Define a CSS class for a styled right bottom button */
+.br-orange-round-button {
+  display: block;
+  padding: 10px 90px; /* Add some padding */
+  text-align: center; /* Center the text */
+  font-size: 36px; /* Set the text size to 36 pixels */
+  border-radius: 50px; /* Add rounded corners */
+  background-color: #ff9900; /* Set the background color to #FF9900 */
+  color: white; /* Set the text color to white (optional) */
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  /* Add any additional styling you need */
+}
+.create-title{
+  font-size: 96px;
+  font-weight: bold;
+  padding: 40px 20px 40px 60px
+}
+
+.create-contents{
+  font-size: 64px;
+  font-weight: normal;
+  padding: 0px 10px;
+}
+
+div:has(> label) {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 80px 20px 40px
+}
