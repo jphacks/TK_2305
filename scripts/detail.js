@@ -1,9 +1,12 @@
-import { getPinById, getUserById } from "./firestore.js";
+import { getPinById, getUserById, increaseReward } from "./firestore.js";
 
 // fetch data by query parameter id
 
 const url = new URL(window.location.href);
 const id = url.searchParams.get("id");
+const transitionButton = document.getElementById("transition-button");
+
+let currentReward = null;
 
 getPinById(id).then((pin) => {
   getUserById(pin.data.user_id).then((user) => {
@@ -18,5 +21,19 @@ getPinById(id).then((pin) => {
     document.getElementById("reward").innerText = data.reward;
     document.getElementById("deadline").innerText = timeDiff + "分以内";
     document.getElementById("photo").attributes.src.value = data.detail;
+
+    currentReward = data.reward;
   });
+});
+
+transitionButton.addEventListener("click", () => {
+  if (currentReward != null) {
+    increaseReward({ id, reward: currentReward })
+      .then(() => {
+        console.log("success");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
 });

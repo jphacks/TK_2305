@@ -73,3 +73,16 @@ export async function addUser({ userName, photoURL, id }) {
     photo_url: photoURL,
   });
 }
+
+export async function increaseReward({ id, reward }) {
+  console.log(id);
+  console.log(reward);
+  const pinRef = doc(db, "pins", id);
+  await setDoc(
+    pinRef,
+    {
+      reward: reward + 1,
+    },
+    { merge: true },
+  );
+}

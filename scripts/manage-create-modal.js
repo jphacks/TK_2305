@@ -16,12 +16,6 @@ openButton.addEventListener("click", () => {
   map.style.height = "calc(50% - 34px)";
   modal.style.display = "block";
   document.getElementById("forgotten-item").focus();
-
-  const now = new Date();
-  now.setHours(now.getHours() + 1);
-  const hours = String(now.getHours()).padStart(2, "0");
-  const minutes = String(now.getMinutes()).padStart(2, "0");
-  document.getElementById("deadline").value = hours + ":" + minutes;
 });
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -34,7 +28,6 @@ form.addEventListener("submit", async (event) => {
         if (!userId) {
           throw new Error("ユーザー名が取得できませんでした。");
         }
-        const reward = document.getElementById("reward").value;
         const photo = document.getElementById("photo").files[0];
         if (!photo) {
           alert("写真が選択されていません。");
@@ -50,7 +43,7 @@ form.addEventListener("submit", async (event) => {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         };
-        if (!forgottenItem || !reward || !deadline) {
+        if (!forgottenItem) {
           alert("入力されていない項目があります。");
           return;
         }
@@ -62,7 +55,7 @@ form.addEventListener("submit", async (event) => {
         await addPin({
           forgottenItem,
           userId,
-          reward,
+          reward: 0,
           deadline,
           location,
           detail,
