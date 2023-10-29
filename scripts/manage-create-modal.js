@@ -13,7 +13,7 @@ const openButton = document.getElementById("create-button");
 const form = document.getElementById("create-form");
 
 openButton.addEventListener("click", () => {
-  map.style.height = "calc(50% - 34px)";
+  map.style.height = "calc(50% - 80px)";
   modal.style.display = "block";
 });
 form.addEventListener("submit", async (event) => {
@@ -72,6 +72,6 @@ form.addEventListener("submit", async (event) => {
     alert("この端末では位置情報が取得できません。");
   }
 
-  map.style.height = "calc(100vh - 68px)";
+  map.style.height = "calc(100vh - 160px)";
   modal.style.display = "none";
 });

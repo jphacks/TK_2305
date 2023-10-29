@@ -34,6 +34,7 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     logInButton.style.display = "none";
     avatar.style.display = "block";
+    // avatar.style.display = "flex";
 
     avatar.attributes.src.value = user.photoURL;
   } else {
