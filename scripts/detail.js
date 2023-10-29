@@ -29,6 +29,7 @@ getPinById(id).then((pin) => {
     // photo.style.height = "auto";
     document.getElementById("photo").style.width = "100%";
     document.getElementById("photo").style.height = "auto";
+    // document.getElementById("photo").style.maxwidth = none;
   });
 });
 

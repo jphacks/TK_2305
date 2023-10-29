@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <title>忘れ物</title>
+    <title>花火Map</title>
     <meta charset="utf-8" />
     <link
       rel="stylesheet"
@@ -16,26 +16,30 @@
   <body>
     <div id="container">
       <div id="header" class="green-popup">
-        <div class="custom-title">リクエスト一覧</div>
+        <div class="custom-title-header"></div>
         <div id="header-ui">
-          <button id="create-button" class="orange-round-button">リクエストを作成</button>
-          <button id="log-in-button" class="orange-round-button">ログイン</button>
+          <!-- <div id="post"> -->
+              <button id="create-button" class="orange-round-button-header">投稿を作成</button>
+          <!-- </div> -->
+          <!-- <div id="log-in"> -->
+            <button id="log-in-button" class="orange-round-button-header">ログイン</button>
+          <!-- </div> -->
           <img id="avatar" src="" alt="avatar" />
         </div>
       </div>
       <div id="map"></div>
       <div id="create-modal">
-        <div class="create-title">リクエスト</div>
+        <div class="create-title">投稿</div>
         <form id="create-form" class="popup-content">
           <div>
             <label class="create-contents">
-              内容
+              場所
             </label>
             <input type="text" id="forgotten-item" name="item" class="input-round-button"/>
           </div>
           <div>
             <label
-              >詳細情報
+              >写真
               <input type="file" id="photo" />
             </label>
             <br>

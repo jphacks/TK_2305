@@ -11,6 +11,8 @@
 
 /* Define a CSS class for a styled button */
 .orange-round-button {
+  display: block;
+  text-align: center; /* Center the text */
   font-size: 36px;           /* Set the text size to 36 pixels */
   border-radius: 15px;       /* Add rounded corners */
   background-color: #FF9900; /* Set the background color to #FF9900 */
@@ -23,7 +25,7 @@
 }
 
 .green-popup{
-  background-color: #005613;
+  background-color: black;
 }
 
 a {

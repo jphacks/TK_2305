@@ -1,16 +1,64 @@
 #header {
-  width: 100vw;
-  height: 68px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  width: 100%;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   justify-items: center;
 }
 
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 20px;
+  z-index: 100;
+}
+
 #header-ui {
   display: flex;
+  width: 100%;
+  height: 90%;
+  /* border-radius: 20px; */
+  /* justify-content: space-between; */
+  /* margin-left: 0px; */
+  /* right: 0; */
 }
 
 #avatar {
   display: none;
   cursor: pointer;
+}
+
+/* Customize the Leaflet popup */
+.custom-title-header {
+  font-weight: bold; /* To make the text bold */
+  font-size: 36px; /* To set the font size (adjust as needed) */
+  color:white;
+}
+
+.orange-round-button-header {
+  font-size: 36px;           /* Set the text size to 36 pixels */
+  border-radius: 50px;       /* Add rounded corners */
+  background-color: #FF9900; /* Set the background color to #FF9900 */
+  color: white;              /* Set the text color to white (optional) */
+  /* Add any additional styling you need */
+  margin-left: 20px;
+}
+
+#post {
+  /* width: 100%; */
+  height: 100%;
+  margin-left: 20px;
+}
+
+#login {
+  /* width: 100%; */
+  height: 100%;
+  margin-left: 20px;
 }
