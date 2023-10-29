@@ -527,15 +527,15 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 .leaflet-container a.leaflet-popup-close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   padding: 4px 4px 0 0;
   border: none;
   text-align: center;
-  width: 18px;
-  height: 14px;
+  width: 36px;
+  height: 28px;
   font:
-    16px/14px Tahoma,
+    32px Tahoma,
     Verdana,
     sans-serif;
   color: #c3c3c3;
