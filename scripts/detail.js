@@ -23,6 +23,12 @@ getPinById(id).then((pin) => {
     document.getElementById("photo").attributes.src.value = data.detail;
 
     currentReward = data.reward;
+
+    // var photo = document.getElementById("photo");
+    // photo.style.width = "auto";
+    // photo.style.height = "auto";
+    document.getElementById("photo").style.width = "100%";
+    document.getElementById("photo").style.height = "auto";
   });
 });
 
