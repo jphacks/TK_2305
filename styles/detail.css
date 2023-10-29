@@ -1,0 +1,55 @@
+        /* 既存のスタイルは省略 */
+
+        /* ヘッダーのスタイリング */
+        #header {
+            background-color: #005613; /* 緑色の背景 */
+            color: white; /* 白色の文字 */
+            padding: 1em;
+            display: flex; 
+            justify-content: space-between; /* 左右の要素を端に配置 */
+            align-items: center; /* 垂直方向の中央揃え */
+            font-size: 3em;
+        }
+
+        /* ヘッダー内の「戻る」ボタンのスタイリング */
+        #header a {
+            background-color: #FF9900; /* オレンジ色の背景 */
+            padding: 0.5em 1em;
+            border-radius: 200px;
+            text-decoration: none;
+            color: white; /* 白色の文字 */
+        }
+
+        /* 忘れ物情報のコンテナ */
+        #forgotten-item {
+            padding: 1em;
+            background-color: #fff;
+            border-radius: 12px;
+            margin-bottom: 1em;
+            font-size: 4em; /* 文字を大きく表示 */
+        }
+
+        /* ユーザー名、お礼、締切、詳細のスタイリング */
+        #user-name, #reward, #deadline {
+            margin-left: 1em;  /* この値はお好みで調整してください */
+            font-size: 3em; /* 文字を大きく表示 */
+        }
+        #deadline {
+            margin-bottom: 1em; /* 1emのマージンを追加 */
+        }
+        /* 親要素にtext-alignを適用 */
+        #button-container {
+            text-align: right;
+        }
+        /* 遷移ボタンのスタイリング */
+        #transition-button {
+            display: inline-block;
+            padding: 0.5em 1em;
+            background-color: #FF9900;
+            border: none;
+            border-radius: 200px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5em; /* ボタン内の文字の大きさを増やす */
+            padding: 1em 2em; /* ボタンのパディングを増やす */
+        }
